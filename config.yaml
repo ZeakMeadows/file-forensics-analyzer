@@ -1,0 +1,31 @@
+# File Forensics Analyzer Configuration
+
+virustotal:
+  enabled: false
+  api_key: ""
+
+analysis:
+  min_string_length: 4
+  max_strings_per_category: 20
+  entropy_threshold: 7.5
+
+suspicious_patterns:
+  urls: 'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+'
+  ips: '\b(?:\d{1,3}\.){3}\d{1,3}\b'
+  emails: '[\w.+-]+@[\w-]+\.[\w.-]+'
+  registry: 'HKEY_[\w\\]+'
+  powershell: 'powershell|invoke-expression|iex|enc|base64|bypass|noprofile'
+  cmd_execution: 'cmd\.exe|command\.com|/c\s+|/k\s+'
+  network: 'wget|curl|netcat|nc\s+-|socket\.'
+  dll_injection: 'VirtualAlloc|WriteProcessMemory|CreateRemoteThread|LoadLibrary'
+
+risk_scoring:
+  entropy_high: 25
+  powershell_detected: 20
+  urls_found: 10
+  ips_found: 10
+  emails_found: 5
+  registry_found: 10
+  cmd_execution: 15
+  network_tools: 10
+  dll_injection: 30

@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "file_name": "suspicious_test.bin",
+    "file_path": "/home/kali/file-forensics-analyzer/tests/test_samples/suspicious_test.bin",
+    "file_size": 913,
+    "file_extension": ".bin",
+    "analyzed_at": "2026-07-03T13:17:55.146005"
+  },
+  "hashes": {
+    "md5": "dc9da592df8460f583d3c123c62e86bf",
+    "sha1": "0054e5c89025ae82018513ab4f979621ad954cd8",
+    "sha256": "00c2b0e196d0411616179022e60fe10d83bac701c966cc7b4c428415ed80c5fe"
+  },
+  "entropy": {
+    "value": 5.47,
+    "max_possible": 8.0,
+    "assessment": "normal",
+    "threshold": 7.5
+  },
+  "strings": {
+    "urls": [
+      "http://example.com",
+      "https://evil-site.net",
+      "http://malicious-c2-server.com"
+    ],
+    "ips": [
+      "192.168.1.100",
+      "10.0.0.50"
+    ],
+    "emails": [
+      "phishing@fake-bank.net",
+      "attacker@evil-domain.com"
+    ],
+    "registry": [
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services",
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+    ],
+    "powershell": [
+      "PowerShell",
+      "enc",
+      "Invoke-Expression",
+      "powershell"
+    ],
+    "cmd_execution": [],
+    "network": [
+      "nc -",
+      "wget",
+      "curl"
+    ],
+    "dll_injection": [
+      "CreateRemoteThread",
+      "WriteProcessMemory",
+      "VirtualAlloc"
+    ]
+  },
+  "file_type": {
+    "extension": ".bin",
+    "detected_type": "Unknown",
+    "is_executable": false,
+    "is_document": false,
+    "is_archive": false
+  },
+  "risk_score": 95,
+  "risk_level": "critical",
+  "indicators": [
+    "PowerShell commands detected: 4",
+    "URLs embedded in file: 3",
+    "IP addresses embedded: 2",
+    "Email addresses found: 2",
+    "Registry references: 2",
+    "Network tool references: 3",
+    "DLL injection APIs detected: 3"
+  ],
+  "recommendations": [
+    "Analyze PowerShell for obfuscation or malicious intent",
+    "Check URLs against threat intelligence feeds",
+    "Investigate IP reputation and geolocation",
+    "Check for persistence mechanisms",
+    "Check for C2 communication or data exfiltration",
+    "HIGH RISK: Possible process injection malware"
+  ]
+}
